@@ -16,6 +16,7 @@
 
 package com.periinc.config;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -43,6 +44,7 @@ import org.springframework.beans.factory.config.MethodInvokingFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.PathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -228,12 +230,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public KeyManager keyManager() {
         System.out.println(keystoreFile);
-        DefaultResourceLoader loader = new DefaultResourceLoader();
-        Resource storeFile = loader
-                .getResource(keystoreFile);
         Map<String, String> passwords = new HashMap<String, String>();
         passwords.put(keystoreUserName, keystorePassword);
-        return new JKSKeyManager(storeFile, keystorePassword, passwords, keystoreUserName);
+        return new JKSKeyManager(new PathResource(keystoreFile), keystorePassword, passwords, keystoreUserName);
     }
  
     // Setup TLS Socket Factory
