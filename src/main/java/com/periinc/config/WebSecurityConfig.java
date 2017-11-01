@@ -95,11 +95,13 @@ import org.springframework.security.saml.websso.WebSSOProfileOptions;
 import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.FilterChainProxy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.channel.ChannelProcessingFilter;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.periinc.core.SAMLUserDetailsServiceImpl;
@@ -229,37 +231,38 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     // Central storage of cryptographic keys
     @Bean
     public KeyManager keyManager() {
-        System.out.println(keystoreFile);
         Map<String, String> passwords = new HashMap<String, String>();
         passwords.put(keystoreUserName, keystorePassword);
         return new JKSKeyManager(new PathResource(keystoreFile), keystorePassword, passwords, keystoreUserName);
     }
  
-    // Setup TLS Socket Factory
-    @Bean
-    public TLSProtocolConfigurer tlsProtocolConfigurer() {
-    	return new TLSProtocolConfigurer();
-    }
-    
-    @Bean
-    public ProtocolSocketFactory socketFactory() {
-        return new TLSProtocolSocketFactory(keyManager(), null, "default");
-    }
+//    // Setup TLS Socket Factory
+//    @Bean
+//    public TLSProtocolConfigurer tlsProtocolConfigurer() {
+//        TLSProtocolConfigurer tlsProtocolConfigurer = new TLSProtocolConfigurer();
+//        tlsProtocolConfigurer.setSslHostnameVerification("allowAll");
+//        return tlsProtocolConfigurer;
+//    }
+//
+//    @Bean
+//    public ProtocolSocketFactory socketFactory() {
+//        return new TLSProtocolSocketFactory(keyManager(), null, "allowAll");
+//    }
 
-    @Bean
-    public Protocol socketFactoryProtocol() {
-        return new Protocol("https", socketFactory(), 443);
-    }
+//    @Bean
+//    public Protocol socketFactoryProtocol() {
+//        return new Protocol("https", socketFactory(), 443);
+//    }
 
-    @Bean
-    public MethodInvokingFactoryBean socketFactoryInitialization() {
-        MethodInvokingFactoryBean methodInvokingFactoryBean = new MethodInvokingFactoryBean();
-        methodInvokingFactoryBean.setTargetClass(Protocol.class);
-        methodInvokingFactoryBean.setTargetMethod("registerProtocol");
-        Object[] args = {"https", socketFactoryProtocol()};
-        methodInvokingFactoryBean.setArguments(args);
-        return methodInvokingFactoryBean;
-    }
+//    @Bean
+//    public MethodInvokingFactoryBean socketFactoryInitialization() {
+//        MethodInvokingFactoryBean methodInvokingFactoryBean = new MethodInvokingFactoryBean();
+//        methodInvokingFactoryBean.setTargetClass(Protocol.class);
+//        methodInvokingFactoryBean.setTargetMethod("registerProtocol");
+//        Object[] args = {"https", socketFactoryProtocol()};
+//        methodInvokingFactoryBean.setArguments(args);
+//        return methodInvokingFactoryBean;
+//    }
     
     @Bean
     public WebSSOProfileOptions defaultWebSSOProfileOptions() {
@@ -515,24 +518,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http
-//            .httpBasic()
-//                .authenticationEntryPoint(samlEntryPoint());
-//        http
-//        	.csrf()
-//        		.disable();
-//        http
-//            .addFilterBefore(metadataGeneratorFilter(), ChannelProcessingFilter.class)
-//            .addFilterAfter(samlFilter(), BasicAuthenticationFilter.class);
-//        http
-//            .authorizeRequests()
-//            .antMatchers("/").permitAll()
-//            .antMatchers("/error").permitAll()
-//            .antMatchers("/saml/**").permitAll()
-//            .anyRequest().authenticated();
-//        http
-//            .logout()
-//                .logoutSuccessUrl("/");
+        http
+            .httpBasic()
+                .authenticationEntryPoint(samlEntryPoint());
+        http
+        	.csrf()
+        		.disable();
+        http
+            .addFilterBefore(metadataGeneratorFilter(), ChannelProcessingFilter.class)
+            .addFilterAfter(samlFilter(), BasicAuthenticationFilter.class);
+        http
+            .authorizeRequests()
+            .antMatchers("/").permitAll()
+            .antMatchers("/error").permitAll()
+            .antMatchers("/saml/**").permitAll()
+            .anyRequest().authenticated();
+        http
+            .logout()
+                .logoutSuccessUrl("/");
     }
  
     /**
