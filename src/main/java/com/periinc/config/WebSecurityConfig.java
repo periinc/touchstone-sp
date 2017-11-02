@@ -345,9 +345,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     // Handler deciding where to redirect user after successful login
     @Bean
     public SavedRequestAwareAuthenticationSuccessHandler successRedirectHandler() {
+        //TODO: Need to update the url to libthing.mit.edu:3000 once the https is in place.
         SavedRequestAwareAuthenticationSuccessHandler successRedirectHandler =
                 new SavedRequestAwareAuthenticationSuccessHandler();
-        successRedirectHandler.setDefaultTargetUrl("/landing");
+        successRedirectHandler.setDefaultTargetUrl("54.156.238.183:3000");
         return successRedirectHandler;
     }
     
