@@ -348,7 +348,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         //TODO: Need to update the url to libthing.mit.edu:3000 once the https is in place.
         SavedRequestAwareAuthenticationSuccessHandler successRedirectHandler =
                 new SavedRequestAwareAuthenticationSuccessHandler();
-        successRedirectHandler.setDefaultTargetUrl("http://54.156.238.183:3000");
+        successRedirectHandler.setDefaultTargetUrl("https://libthing.mit.edu");
         return successRedirectHandler;
     }
     
