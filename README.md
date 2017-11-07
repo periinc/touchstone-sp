@@ -6,6 +6,12 @@ In order for a Service Provider to talk to an IDP, couple of configuration param
 2. Service Provider needs to be registered with MIT Shib IDP
 
 
+# SSO (Sinle-Sign-On)
+
+The application talks to MIT Shib IDP and receives a "__eduPersonPrincipalName__" as a unique logged in user that can be returned to the calling application. 
+A sample response can be found under [idp-response.xml](..src/main/resources/saml/idp-response.xml). 
+
+
 # Application accessible via HTTPS
 1. Obtain a CA issued certificate from MIT or generate a self-signed SSL cert. 
 2. Create a keystore file with atleast one private key entry
@@ -22,7 +28,7 @@ In order for a Service Provider to talk to an IDP, couple of configuration param
 5. Update application.properties with SSL parameters
 
 
-# SP Keystore (Regired to communicate with IDP)
+# SP Keystore (Required to communicate with IDP)
 1. Generate the keystore file as above
 2. Import the public certificate used for SP
 
@@ -37,7 +43,6 @@ In order for a Service Provider to talk to an IDP, couple of configuration param
     
        "docker run --name 'name-of-the-container' -port 80:8443 -v /Users/peris/touchstone-sp:/touchstone-sp -d 'name-of-the-image'" (Ex. docker run --name touchstone-sp -port 80:8443 -d touchstone-sp)
              
-
 #Docker cheat sheet
 
 1. List images
