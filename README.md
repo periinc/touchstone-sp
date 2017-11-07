@@ -9,7 +9,7 @@ In order for a Service Provider to talk to an IDP, couple of configuration param
 # SSO (Sinle-Sign-On)
 
 The application talks to MIT Shib IDP and receives a "__eduPersonPrincipalName__" as a unique logged in user that can be returned to the calling application. 
-A sample response can be found under [idp-response.xml](../tree/master/src/main/resources/saml/idp-response.xml). 
+A sample response can be found under [idp-response.xml](/tree/master/src/main/resources/saml/idp-response.xml). 
 
 
 # Application accessible via HTTPS
