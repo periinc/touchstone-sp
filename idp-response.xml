@@ -59,7 +59,7 @@
                         </ds:Transform>
                     </ds:Transforms>
                     <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
-                    <ds:DigestValue>0vw8IdHXbcvcyOWQpCwwF5qVmdhkCkkbTFjKlmqdMRw=</ds:DigestValue>
+                    <ds:DigestValue>[some value]</ds:DigestValue>
                 </ds:Reference>
             </ds:SignedInfo>
             <ds:SignatureValue>
