@@ -11,9 +11,9 @@
     <saml2:Issuer xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion">https://idp.mit.edu/shibboleth</saml2:Issuer>
     <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
         <ds:SignedInfo>
-            <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            <ds:CanonicalizationMethod Algorithm="[some value]" />
             <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
-            <ds:Reference URI="#_0d6d08b6db4e2b5e304ffcc01b52f3bf">
+            <ds:Reference URI="[some value]">
                 <ds:Transforms>
                     <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
                     <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
@@ -23,32 +23,15 @@
                     </ds:Transform>
                 </ds:Transforms>
                 <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
-                <ds:DigestValue>W/tK1iwP/H9f5O8+2hS4NfYjkVPrF4vctsPHlL4pXho=</ds:DigestValue>
+                <ds:DigestValue>[some value]</ds:DigestValue>
             </ds:Reference>
         </ds:SignedInfo>
         <ds:SignatureValue>
-            HJszs+DDOexlAy4uIxZH2GEjCX3DMq0kq+FG60lDwriW6rr4jTSOJ7UfCCHtpgUkFD8rUK0xaxqv
-            VlT0qsmOws830GeJOpfT42ReOiUM3OV6DRPrEvCTLGnZk9MrkHO59xOMdSOyiYPLW+lbm38Oq/qM
-            WAQoZJ7OuYGh4PhTbXhtymWLzloGG0D8H1H3ZsOlfgpzbeMXy6k3qVO4kovgLORkWrZYX0gD3Xif
-            a8LRQLVWYnB4PaKMOGVataMmtVfu6D/XdDX9RNCkuAh5cac0eVFwM4HET7OTov3fKEtkHqDPK1eR
-            r/wuPGrIVyY/fIwnWnwGSSkrO0TZJeik0KTxdw==
+            [some value]
         </ds:SignatureValue>
         <ds:KeyInfo>
             <ds:X509Data>
-                <ds:X509Certificate>MIIDCDCCAfCgAwIBAgIJAK/yS5ltGi7MMA0GCSqGSIb3DQEBBQUAMBYxFDASBgNVBAMTC2lkcC5t
-                    aXQuZWR1MB4XDTEyMDczMDIxNTAxN1oXDTMyMDcyNTIxNTAxN1owFjEUMBIGA1UEAxMLaWRwLm1p
-                    dC5lZHUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDgC5Y2mM/VMThzTWrZ2uyv3Gw0
-                    mWU9NgQpWN1HQ/lLBxH1H6pMc5+fGpOdrvxH/Nepdg6uAJwZrclTDAHHpG/THb7K063NRtic8h9U
-                    YSqwxIWUCXI8qNijcWA2bW6PFEy4yIP611J+IzQxzD/ZiR+89ouzdjNBrPHzoaIoMwflftYnFc4L
-                    /qu4DxE/NWgANYPGEJfWUFTVpfNV1Iet60904zl+O7T79mwaQwwOMUWwk/DEQyvG6bf2uWL4aFx4
-                    laBOekrA+5rSHUXAFlhCreTnzZMkVoxSGqYlc5uZuZmpFCXZn+tNpsVYz+c4Hve3WOZwhx/7bMGC
-                    wlx7oovoQWQ5AgMBAAGjWTBXMDYGA1UdEQQvMC2CC2lkcC5taXQuZWR1hh5odHRwczovL2lkcC5t
-                    aXQuZWR1L3NoaWJib2xldGgwHQYDVR0OBBYEFF5aINzhvMR+pOijYHtr3yCKsrMSMA0GCSqGSIb3
-                    DQEBBQUAA4IBAQDfVpscchXXa4Al/l9NGNwQ1shpQ8d+k+NpX2Q976jau9DhVHa42F8bfl1EeHLM
-                    FlN79aUxFZb3wvr0h5pq3a8F9aWHyKe+0R10ikVueDcAmg0V7MWthFdsyMwHPbnCdSXo2wh0Ghje
-                    IF3f3+hZZwrZ4sZqjX2RmsYnyXgS1r5mzuu4W447Q1fbC5BeZTefUhJcfHQ56ztIFtLJdRuHHnqj
-                    09CaQVMD1FtovM86vYwVMwMsgOgkN3c7tW6kXHHBHeEA31xUJsqXGTRlwMSyJTju3SFvhXI/8ZIx
-                    shTzWURBo+vf6A6QQvSvJAju4zVLZy83YB/cvAFsV3BexZ4xzuQD</ds:X509Certificate>
+                <ds:X509Certificate>[some value]</ds:X509Certificate>
             </ds:X509Data>
         </ds:KeyInfo>
     </ds:Signature>
@@ -64,9 +47,9 @@
         <saml2:Issuer>https://idp.mit.edu/shibboleth</saml2:Issuer>
         <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
             <ds:SignedInfo>
-                <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                <ds:CanonicalizationMethod Algorithm="[some value]" />
                 <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
-                <ds:Reference URI="#_4e875ca2faf251e72b2ba035b6ab2121">
+                <ds:Reference URI="[some value]">
                     <ds:Transforms>
                         <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
                         <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
@@ -80,28 +63,10 @@
                 </ds:Reference>
             </ds:SignedInfo>
             <ds:SignatureValue>
-                GPlHCJeHwn0ugMV89Dh+8oZhViygqGgDjCkUoTxMRns6J+4brcvJavHlGTQtouk+AXy8PHM9y5ds
-                0bFOkzYkQxC9SkHT+guFUO4TsdrDhDqqdxGGQ0VRemJcVoSHDjAOcS3uUrxnvIYMcDvp+lAIB2aL
-                r9elfXyizwjB7ju5GQMhQAP3OVCqvDDFWYDkK4BnIU25JeYlc92RDLZ5W80ATWLnQLPrxNF6TTF+
-                D9zJ1K/pEKjkWigG0rKjfrp/W9xfFpm7jMB0oUMK3qpppebFNsnVSjM7slNWvekF7Ijq+XGtPwEJ
-                W2BYpPAWTMOQkz1CjcD3DJG/SsyT7meVV1NKHA==
-            </ds:SignatureValue>
+                [some value]
             <ds:KeyInfo>
                 <ds:X509Data>
-                    <ds:X509Certificate>MIIDCDCCAfCgAwIBAgIJAK/yS5ltGi7MMA0GCSqGSIb3DQEBBQUAMBYxFDASBgNVBAMTC2lkcC5t
-                        aXQuZWR1MB4XDTEyMDczMDIxNTAxN1oXDTMyMDcyNTIxNTAxN1owFjEUMBIGA1UEAxMLaWRwLm1p
-                        dC5lZHUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDgC5Y2mM/VMThzTWrZ2uyv3Gw0
-                        mWU9NgQpWN1HQ/lLBxH1H6pMc5+fGpOdrvxH/Nepdg6uAJwZrclTDAHHpG/THb7K063NRtic8h9U
-                        YSqwxIWUCXI8qNijcWA2bW6PFEy4yIP611J+IzQxzD/ZiR+89ouzdjNBrPHzoaIoMwflftYnFc4L
-                        /qu4DxE/NWgANYPGEJfWUFTVpfNV1Iet60904zl+O7T79mwaQwwOMUWwk/DEQyvG6bf2uWL4aFx4
-                        laBOekrA+5rSHUXAFlhCreTnzZMkVoxSGqYlc5uZuZmpFCXZn+tNpsVYz+c4Hve3WOZwhx/7bMGC
-                        wlx7oovoQWQ5AgMBAAGjWTBXMDYGA1UdEQQvMC2CC2lkcC5taXQuZWR1hh5odHRwczovL2lkcC5t
-                        aXQuZWR1L3NoaWJib2xldGgwHQYDVR0OBBYEFF5aINzhvMR+pOijYHtr3yCKsrMSMA0GCSqGSIb3
-                        DQEBBQUAA4IBAQDfVpscchXXa4Al/l9NGNwQ1shpQ8d+k+NpX2Q976jau9DhVHa42F8bfl1EeHLM
-                        FlN79aUxFZb3wvr0h5pq3a8F9aWHyKe+0R10ikVueDcAmg0V7MWthFdsyMwHPbnCdSXo2wh0Ghje
-                        IF3f3+hZZwrZ4sZqjX2RmsYnyXgS1r5mzuu4W447Q1fbC5BeZTefUhJcfHQ56ztIFtLJdRuHHnqj
-                        09CaQVMD1FtovM86vYwVMwMsgOgkN3c7tW6kXHHBHeEA31xUJsqXGTRlwMSyJTju3SFvhXI/8ZIx
-                        shTzWURBo+vf6A6QQvSvJAju4zVLZy83YB/cvAFsV3BexZ4xzuQD</ds:X509Certificate>
+                    <ds:X509Certificate>[some value]</ds:X509Certificate>
                 </ds:X509Data>
             </ds:KeyInfo>
         </ds:Signature>
@@ -109,7 +74,7 @@
             <saml2:NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:transient"
                           NameQualifier="https://idp.mit.edu/shibboleth"
                           SPNameQualifier="https://libthing.mit.edu"
-            >AAlzZWNyZXQzMzUqCNcf85NYMzwl2I1u/mN73TvE4PrcgVU/LiR30UAu45WXUrjVnqEXK0F9vDxlikKU2tO1vKxZy188kJA5u0AA+2pQ9JTWrqaX6I5BCnTCqQ7UPEAQQggRc+FI</saml2:NameID>
+            >[some string]</saml2:NameID>
             <saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
                 <saml2:SubjectConfirmationData Address="24.107.219.118"
                                                InResponseTo="a1g8j466c7cdj22cag5ei6if44e30f"
@@ -126,7 +91,7 @@
             </saml2:AudienceRestriction>
         </saml2:Conditions>
         <saml2:AuthnStatement AuthnInstant="2017-11-07T09:59:52.809Z"
-                              SessionIndex="_5bf31a428ccc561de65735cb18422aa6"
+                              SessionIndex="[]"
         >
             <saml2:SubjectLocality Address="24.107.219.118" />
             <saml2:AuthnContext>
